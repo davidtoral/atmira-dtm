@@ -1,1 +1,5 @@
 <p class="underline m-4">dashboard works!</p>
+
+<div *ngFor="let apod of apods">
+  <app-card [apod]="apod"></app-card>
+</div>
