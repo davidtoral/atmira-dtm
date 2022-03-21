@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DatePipe } from '@angular/common';
+import { Apod } from 'src/app/interfaces/apod';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,9 @@ export class NasaService {
     private datePipe: DatePipe
   ) { }
 
-  getApod(date: Date): Observable<any> {
+  getApod(date: Date): Observable<Apod> {
     let dateAsString = this.datePipe.transform(date,'yyyy-MM-dd');
-    return this.httpClient.get(`${this.apiUrl}?api_key=${this.apiKey}&date=${dateAsString}`);
+    return this.httpClient.get<Apod>(`${this.apiUrl}?api_key=${this.apiKey}&date=${dateAsString}`);
   }
 
 
