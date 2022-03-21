@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { NasaService } from './services/nasa.service';
 
 
 
@@ -9,6 +10,10 @@ import { DashboardModule } from './dashboard/dashboard.module';
   imports: [
     CommonModule,
     DashboardModule
+  ],
+  providers: [
+    NasaService,
+    DatePipe
   ]
 })
 export class AppCommonModule { }
