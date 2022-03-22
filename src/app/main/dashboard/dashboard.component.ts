@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NasaService } from '../services/nasa.service';
 import { Apod } from './../../interfaces/apod';
 import { takeUntil } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   private unsubscribe$ = new Subject();
 
   readonly APODS_TO_GET = 6;
@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
       this.apods.push(apod);
 
       if (index) {
-        this.getApodData(index)
+        this.getApodData(index);
       }
     });
   }

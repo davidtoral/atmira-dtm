@@ -19,7 +19,7 @@ export class NasaService {
   ) { }
 
   getApod(date: Date): Observable<Apod> {
-    let dateAsString = this.datePipe.transform(date,'yyyy-MM-dd');
+    const dateAsString = this.datePipe.transform(date, 'yyyy-MM-dd');
     return this.httpClient.get<Apod>(`${this.API_URL}?api_key=${this.API_KEY}&date=${dateAsString}`);
   }
 
