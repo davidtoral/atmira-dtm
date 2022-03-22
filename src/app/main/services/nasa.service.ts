@@ -10,8 +10,8 @@ import { Apod } from 'src/app/interfaces/apod';
 
 export class NasaService {
 
-  readonly apiUrl = 'https://api.nasa.gov/planetary/apod';
-  readonly apiKey = 'zdUP8ElJv1cehFM0rsZVSQN7uBVxlDnu4diHlLSb';
+  readonly API_URL = 'https://api.nasa.gov/planetary/apod';
+  readonly API_KEY = 'zdUP8ElJv1cehFM0rsZVSQN7uBVxlDnu4diHlLSb';
 
   constructor(
     private httpClient: HttpClient,
@@ -20,7 +20,7 @@ export class NasaService {
 
   getApod(date: Date): Observable<Apod> {
     let dateAsString = this.datePipe.transform(date,'yyyy-MM-dd');
-    return this.httpClient.get<Apod>(`${this.apiUrl}?api_key=${this.apiKey}&date=${dateAsString}`);
+    return this.httpClient.get<Apod>(`${this.API_URL}?api_key=${this.API_KEY}&date=${dateAsString}`);
   }
 
 
