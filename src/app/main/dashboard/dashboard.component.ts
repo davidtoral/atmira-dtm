@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     .pipe(takeUntil(this.unsubscribe$)).subscribe(apod => {
       this.apods.push(apod);
 
-      if (index >= 0) {
+      if (index) {
         this.getApodData(index)
       }
     });
