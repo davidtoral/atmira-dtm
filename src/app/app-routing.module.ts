@@ -5,7 +5,7 @@ import { DetailComponent } from './main/detail/detail.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'detail/:id', component: DetailComponent }
+  { path: 'detail/:date', component: DetailComponent }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { CardComponent } from './components/card/card.component';
 import { MatCardModule } from '@angular/material/card';
@@ -13,7 +14,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CardComponent
   ],
   imports: [
-  CommonModule,
+    CommonModule,
+    RouterModule,
     FlexLayoutModule,
     MatCardModule,
     MatButtonModule
