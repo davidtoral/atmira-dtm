@@ -1,1 +1,8 @@
-<p>detail works!</p>
+<div>
+  <button mat-raised-button routerLink="" class="w-full md:w-fit">Ir atrás</button>
+</div>
+
+<div *ngIf="apod" id="detail" class="mx-auto mt-4">
+  <img [src]="apod.hdurl || apod.url" [alt]="apod.title" class="h-auto my-4">
+  <p class="text-justify text-base mt-2">{{ apod.explanation }}</p>
+</div>
