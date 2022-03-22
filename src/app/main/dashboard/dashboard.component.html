@@ -1,5 +1,3 @@
-<p class="underline m-4">dashboard works!</p>
-
-<div *ngFor="let apod of apods">
-  <app-card [apod]="apod"></app-card>
+<div fxLayout="row wrap" fxLayoutAlign="space-between center" class="w-full">
+  <app-card [apod]="apod" *ngFor="let apod of apods" fxFlex="32" fxFlex.lt-md="49" fxFlex.lt-sm="100" class="mb-4"></app-card>
 </div>

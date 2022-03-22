@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { CardComponent } from './components/card/card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { MatButtonModule } from '@angular/material/button';
     CardComponent
   ],
   imports: [
-    CommonModule,
+  CommonModule,
+    FlexLayoutModule,
     MatCardModule,
     MatButtonModule
   ],
