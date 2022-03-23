@@ -1,23 +1,35 @@
-import { browser, logging } from 'protractor';
-import { AppPage } from './app.po';
+import {browser, by, element} from 'protractor';
 
-describe('workspace-project App', () => {
-  let page: AppPage;
 
-  beforeEach(() => {
-    page = new AppPage();
-  });
+describe('Atmira events', () => {
+    browser.get('http://localhost:4200/');
+    beforeEach(() => {
+        browser.driver.manage().window().maximize();
+      });
 
-  it('should display welcome message', async () => {
-    await page.navigateTo();
-    expect(await page.getTitleText()).toEqual('atmira-dtm app is running!');
-  });
+    it('Title is Atmira', () => {
+        expect(element(by.id('page-title')).getText()).toBe('Atmira');
+      });
 
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
-  });
+    it('6 cards are created', () => {
+        browser.waitForAngular();
+        browser.driver.findElements(by.css('.card')).
+          then((elems) => {
+              expect(elems.length).toEqual(6);
+            }
+        );
+    });
+
+    it('Navigate to first card', () => {
+      element(by.css('.card-button')).click();
+    });
+
+    it('Detail is created', () => {
+      browser.waitForAngular();
+      expect(element(by.id('detail')).isPresent()).toBe(true);
+    });
+
+    it('Go back to dashboard', () => {
+      element(by.id('go-back-button')).click();
+    });
 });
