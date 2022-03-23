@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   readonly APODS_TO_GET = 6;
   apods: Apod[] = [];
+  loading = false;
 
   constructor(
     private nasaService: NasaService
@@ -28,16 +29,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
   * Index will be decrease every time the function is called
   */
   getApodData(index: number): void {
+    this.loading = true;
     index--;
     const today = new Date();
     const dayMinusIndex = new Date(today.setDate(today.getDate() - index));
     this.nasaService.getApod(dayMinusIndex)
     .pipe(takeUntil(this.unsubscribe$)).subscribe(apod => {
       this.apods.push(apod);
-
-      if (index) {
-        this.getApodData(index);
-      }
+      index ? this.getApodData(index) : this.loading = false;
     });
   }
 

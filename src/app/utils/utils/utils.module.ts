@@ -5,25 +5,28 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NasaService } from './services/nasa.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+  CommonModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressBarModule
   ],
   exports: [
     FlexLayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressBarModule
   ],
   providers: [
     NasaService,
