@@ -1,5 +1,17 @@
-<mat-progress-bar mode="determinate" [value]="apods.length / APODS_TO_GET * 100" class="mb-6" [style.visibility]="loading ? 'visible' : 'hidden'"></mat-progress-bar>
+<mat-progress-bar
+  mode="determinate"
+  [value]="(apods.length / APODS_TO_GET) * 100"
+  class="mb-6"
+  [style.visibility]="loading ? 'visible' : 'hidden'"
+></mat-progress-bar>
 
 <div fxLayout="row wrap" fxLayoutAlign="space-between center" class="w-full">
-  <app-card [apod]="apod" *ngFor="let apod of apods" fxFlex="32" fxFlex.lt-md="49" fxFlex.lt-sm="100" class="mb-4 card"></app-card>
+  <app-card
+    [apod]="apod"
+    *ngFor="let apod of apods"
+    fxFlex="32"
+    fxFlex.lt-md="49"
+    fxFlex.lt-sm="100"
+    class="mb-4 card"
+  ></app-card>
 </div>
