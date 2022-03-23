@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Apod } from 'src/app/interfaces/apod';
-import { NasaService } from '../services/nasa.service';
+import { NasaService } from '../../utils/utils/services/nasa.service';
 import { takeUntil } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 

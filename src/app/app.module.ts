@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppCommonModule } from './main/common.module';
+import { UtilsModule } from './utils/utils/utils.module';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,8 @@ import { AppCommonModule } from './main/common.module';
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatToolbarModule,
     AppCommonModule,
+    UtilsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

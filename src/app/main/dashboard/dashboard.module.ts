@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { CardComponent } from './components/card/card.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { UtilsModule } from 'src/app/utils/utils/utils.module';
 
 
 @NgModule({
@@ -16,9 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     RouterModule,
-    FlexLayoutModule,
-    MatCardModule,
-    MatButtonModule
+    UtilsModule
   ],
   exports: [
   ]

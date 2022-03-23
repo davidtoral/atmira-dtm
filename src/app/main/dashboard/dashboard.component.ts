@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { NasaService } from '../services/nasa.service';
+import { NasaService } from '../../utils/utils/services/nasa.service';
 import { Apod } from './../../interfaces/apod';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
